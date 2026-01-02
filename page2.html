@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman 2 - Cyber Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f0c29;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #00ffff;
+      position: relative;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #0ff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #0ff, 0 0 40px #00f;
+    }
+
+    .popup.show {
+      display: flex;
+      animation: zoomIn 1s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      color: #0ff;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: 2px solid #0ff;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      z-index: 2; /* memastikan tombol kembali berada di atas */
+    }
+
+    .back-btn:hover {
+      background-color: #0ff;
+      color: #000;
+    }
+
+    .popup-text {
+      color: #0ff;
+      font-size: 1.5em;
+      margin-top: 20px;
+      text-align: left; /* Ubah text-align menjadi left untuk memposisikan teks ke kiri */
+      margin-left: 50px; /* Geser teks ke kanan dengan margin-left */
+      animation: fadeIn 1s ease;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">Kembali</a>
+
+  <div class="popup" id="popup">
+    <img src="c:\Users\PC GAMING\Documents\New folder\akmal.png" alt="Cyber Surprise">
+    <!-- Teks di bawah gambar -->
+    <p class="popup-text">SELAMAT ANDA MEMBUANG WAKTU ANDA SENDIRI MONYETTT !</p>
+  </div>
+
+  <script>
+    window.onload = () => {
+      document.getElementById('popup').classList.add('show');
+    };
+  </script>
+</body>
+</html>
